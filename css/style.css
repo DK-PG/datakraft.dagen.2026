@@ -701,3 +701,153 @@ details p {
     }
 
 }
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 960px) {
+
+    .hero-grid,
+    .two-column,
+    .quiz-content,
+    .signup-card {
+        grid-template-columns: 1fr;
+    }
+
+    .three-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .two-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        max-width: none;
+    }
+
+    .quiz-action {
+        justify-self: stretch;
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   MOBIL
+========================================== */
+
+@media (max-width: 768px) {
+
+    .container,
+    .navbar {
+        width: calc(100% - 32px);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero {
+        padding: 80px 0 60px;
+    }
+
+    .hero-bg-shape {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .timeline-time {
+        text-align: center;
+    }
+
+    .info-card,
+    .contact-card,
+    .hero-card {
+        padding: 24px;
+    }
+
+    .speaker-body {
+        padding: 20px;
+    }
+
+    .signup-card {
+        padding: 24px;
+    }
+
+    .form-placeholder {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================
+   LITEN MOBIL
+========================================== */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 2.3rem;
+        line-height: 1;
+    }
+
+    .section-heading h2,
+    .two-column h2,
+    .quiz-content h2,
+    .signup-card h2 {
+        font-size: 2rem;
+    }
+
+    .hero-meta div {
+        padding: 14px;
+    }
+
+    .timeline-content {
+        padding: 18px;
+    }
+
+    .timeline-time {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .logo-text {
+        font-size: 0.95rem;
+    }
+}
