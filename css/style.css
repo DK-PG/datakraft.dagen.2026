@@ -205,7 +205,7 @@ p {
     height: 420px;
     border-radius: 50%;
     background: rgba(148, 47, 71, 0.08);
-    border: 400px solid rgba(148, 47, 71, 0.05);
+    border: 40px solid rgba(148, 47, 71, 0.05);
 }
 .hero-grid {
     position: relative;
@@ -374,7 +374,7 @@ p {
     gap: 24px;
 }
 
-.three-column {
+.three-columns {
     grid-template-columns: repeat(3, 1fr);
 }
 
