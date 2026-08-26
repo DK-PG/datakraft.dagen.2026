@@ -548,7 +548,7 @@ p {
 
 .quiz-action {
     justify-self: end;
-    width: min(380px, 100%);
+    width: min(700px, 100%);
     padding: 32px;
     border-radius: var(--radius-large);
     background: rgba(255, 255, 255, 0.12);
@@ -558,6 +558,15 @@ p {
 .quiz-action .btn {
     width: 100%;
     margin-bottom: 16px;
+}
+
+.quiz-action iframe {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: var(--radius-small);
+    background: var(--dk-white);
 }
 
 /* FAQ */
@@ -684,6 +693,7 @@ details p {
     .quiz-action {
         justify-self: stretch;
         width: 100%;
+        max-width: none;
     }
 }
 
@@ -694,7 +704,14 @@ details p {
     .navbar {
         width: calc(100% - 32px);
     }
+    
 
+    .quiz-action iframe {
+        display: block;
+        width: 100%;
+        min-height: 400px;
+        border: none;
+    }
     .section {
         padding: 60px 0;
     }
@@ -812,6 +829,7 @@ details p {
         width: calc(100% - 24px);
     }
 
+
     .hero h1 {
         font-size: 2.3rem;
         line-height: 1;
@@ -833,5 +851,199 @@ details p {
 
     .quiz-action {
         padding: 24px;
+    }
+
+    .quiz-action iframe {
+        height: 400px;
+    }
+}
+
+
+/* =========================================================
+   MOBILOPTIMERING / MICROSOFT FORMS
+   ========================================================= */
+
+/* Förhindra att enskilda element kan göra hela sidan bredare än viewporten */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    overflow-wrap: anywhere;
+}
+
+main,
+section,
+header,
+footer,
+.container,
+.navbar,
+.hero-grid,
+.two-column,
+.cards,
+.quiz-content,
+.quiz-action {
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* Säker standard för media och inbäddningar */
+img,
+video,
+svg,
+canvas,
+iframe {
+    max-width: 100%;
+}
+
+iframe {
+    display: block;
+}
+
+/* Microsoft Forms */
+.microsoft-form-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--radius-small);
+    background: var(--dk-white);
+}
+
+.microsoft-form-wrap iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    border: 0 !important;
+    display: block;
+}
+
+/* Se till att text och långa länkar aldrig skapar horisontell scroll */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+a,
+span,
+strong {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Desktop: ge formuläret bra höjd */
+.quiz-action {
+    min-width: 0;
+}
+
+@media (min-width: 769px) {
+    .microsoft-form-wrap iframe {
+        height: 600px !important;
+    }
+}
+
+/* Tablet och mobil */
+@media (max-width: 768px) {
+    .container,
+    .navbar {
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
+    }
+
+    .hero-grid,
+    .two-column,
+    .quiz-content,
+    .cards,
+    .demo-grid {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-content,
+    .hero-card,
+    .info-card,
+    .speaker-card,
+    .contact-card,
+    .timeline-content,
+    .quiz-action,
+    .quiz-form {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .quiz-action {
+        width: 100%;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .microsoft-form-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .microsoft-form-wrap iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 560px !important;
+    }
+
+    /* Gör knappar lättare att trycka på utan att de blir bredare än skärmen */
+    .hero-actions {
+        width: 100%;
+    }
+
+    .hero-actions .btn,
+    .quiz-action > .btn {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Långa e-postadresser får brytas snyggt */
+    .contact-card a {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Små mobiler */
+@media (max-width: 480px) {
+    .container,
+    .navbar {
+        width: calc(100% - 24px);
+        max-width: calc(100% - 24px);
+    }
+
+    .quiz-action {
+        padding: 12px;
+        border-radius: var(--radius-medium);
+    }
+
+    .microsoft-form-wrap {
+        border-radius: 8px;
+    }
+
+    .microsoft-form-wrap iframe {
+        height: 500px !important;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        font-size: clamp(2.25rem, 13vw, 3rem);
+    }
+
+    .hero-subtitle {
+        max-width: 100%;
+    }
+
+    .btn {
+        max-width: 100%;
     }
 }
